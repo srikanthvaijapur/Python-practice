@@ -23,10 +23,10 @@ while True:
     if option.lower()=='d':
         amount =float(input('Enter amount to deposit:',))
         c.deposit(amount)
-    if option.lower()=='w':
+    elif option.lower()=='w':
         amount =float(input('Enter amount to withdraw'))
         c.withdraw(amount)
-    if option.lower()=='e':
+    elif option.lower()=='e':
         print("Thanks for banking:")
         break
     else:
