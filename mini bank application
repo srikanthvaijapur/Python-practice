@@ -1,0 +1,35 @@
+class customer:
+    '''This class describes the bank operations'''
+    bankname = 'BSNL BANK'
+    def __init__(self,name,balance =0.0):        
+        self.name = name
+        self.balance = balance
+    def deposit(self,amount):
+        self.balance=self.balance+amount
+        print('afte deposite balance is:',self.balance)
+    def withdraw(self,amount):
+        if amount >self.balance:
+            print('insufficient funds,balance cannot be withdrawn:')
+        else:
+            self.balance = self.balance-amount
+            print('Afte withrawal:',self.balance)
+            
+print('welcome to ',customer.bankname)
+name = input('Enter your name:')
+c = customer(name)
+while True:
+    print(' d-deposit\n w-withdraw \n e-exit')
+    option = input('chose your option:')
+    if option.lower()=='d':
+        amount =float(input('Enter amount to deposit:',))
+        c.deposit(amount)
+    if option.lower()=='w':
+        amount =float(input('Enter amount to withdraw'))
+        c.withdraw(amount)
+    if option.lower()=='e':
+        print("Thanks for banking:")
+        break
+    else:
+        print('your option is invalied please use the right option:')
+
+    
